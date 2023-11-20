@@ -1,0 +1,494 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет для меню */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Расположение в верхней части .parallax */
+    z-index: 3; /* Убедитесь, что меню остается над остальными элементами */
+    text-transform: uppercase;
+}
+
+.contact-link {
+    color: #212529;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.navbar a {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+}
+.navbar a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:before, .navbar a:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  background: #fff;
+}
+
+.navbar a:before {
+  left: 0;
+}
+.navbar a:after {
+  right: 0;
+  background: #fff;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.navbar a:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.navbar a:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+.parallax {
+    background-image: url("../../img/banner.jpeg");
+    height: 800px; /* Высота баннера */
+    background-attachment: fixed;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden; /* Обеспечивает, что внутренние элементы также будут обрезаны */
+    text-transform: uppercase;
+}
+
+.parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Указываем направление элементов в столбец */
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.Phone { animation: ringing 5s ease-in-out infinite; }
+
+#p1 { transform-origin:bottom right; animation: reveal 5s ease-in-out infinite backwards; }
+#p2 { transform-origin:bottom right; animation: reveal 5s ease-in-out .2s infinite backwards; }
+
+@keyframes reveal {
+  0% {opacity:0; transform: scale(1); }
+  20% {opacity:0; transform: scale(1); }
+  22% {opcaity:1; transform: scale(1.05); }
+  26% {opacity:1; transform: scale(1); }
+  40% {opacity:0; transform: scale(1); }
+  100% {opacity:0; transform: scale(1); }
+}
+
+@keyframes scaleup {
+  20% {transform: scale(1);}
+  30% {transform: scale(1.1);}
+  40% {transform: scale(1);}
+  100% {transform: scale(1);}
+}
+
+@keyframes ringing {
+  20% { transform: rotate(0deg); }
+  21% { transform: rotate(10deg); }
+  22% { transform: rotate(-10deg); }
+  23% { transform: rotate(12deg); }
+  24% { transform: rotate(-12deg); }
+  25% { transform: rotate(12deg); }
+  26% { transform: rotate(-12deg); }
+  28% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  32% { transform: rotate(5deg); }
+  34% { transform: rotate(-5deg); }
+  36% { transform: rotate(2deg); }
+  38% { transform: rotate(0deg); }
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    z-index: 3; /* Убедитесь, что заголовок остается над темным слоем */
+    position: relative;
+}
+
+p.wedding-date {
+    font-size: 24px; /* Размер шрифта для даты */
+    margin-top: 20px; /* Отступ сверху для даты */
+    z-index: 3; /* Убедитесь, что дата остается над темным слоем */
+    position: relative;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 50px 20px; /* Отступы для секции */
+    background-color: #fff; /* Белый фон для секции */
+}
+
+.welcome-message h2 {
+    font-size: 36px; /* Размер шрифта для заголовка */
+    color: #333; /* Цвет текста */
+    margin: 0 0 10px; /* Отступы заголовка */
+}
+
+.welcome-message p {
+    font-size: 18px; /* Размер шрифта для абзацев */
+    color: #666; /* Цвет текста абзацев */
+    line-height: 1.6; /* Межстрочный интервал для абзацев */
+}
+
+/* Стили для новой секции */
+.container-container-fluid img {
+    width: 100%; /* Фотография будет растягиваться на весь блок */
+    padding: 15px; /* Отступ внутри блока с фотографией */
+    border-radius: 5px; /* Скругление углов изображения */
+}
+
+/* Стили для row с отступами внутри container-fluid */
+.container-fluid > .row {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Фон и стилизация для блоков с надписями */
+.bg-light {
+    background-color: #f8f9fa!important; /* Светлый фон для верхнего блока */
+}
+
+.bg-secondary {
+    background-color: #6c757d!important; /* Темный фон для нижнего левого блока */
+}
+
+.bg-info {
+    background-color: #17a2b8!important; /* Голубой фон для нижнего правого блока */
+}
+
+/* Отступы между блоками */
+.mb-3 {
+    margin-bottom: 1rem!important; /* Отступ снизу */
+}
+
+.p-3 {
+    padding: 1rem!important; /* Отступ внутри блоков */
+}
+
+.text-center {
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+
+
+/* Стили для Q&A и таймлайна */
+.qa {
+    position: relative;
+    padding: 30px 0;
+}
+
+.qa-item {
+    margin-bottom: 40px;
+}
+
+.qa-item h3 {
+    font-size: 1.5em;
+}
+
+.qa-item p {
+    font-size: 1em;
+}
+
+/* Линия таймлайна */
+.qa::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background: #ddd;
+    z-index: 1;
+}
+
+.left-item {
+    text-align: right; /* Текст с левой стороны выравнивается по правому краю */
+}
+
+.right-item {
+    text-align: left; /* Текст с правой стороны выравнивается по левому краю */
+}
+
+/* Стили для кнопки Наверх */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+}
+
+/* Дополнительные стили для иконки, если это необходимо */
+.back-to-top i {
+    font-size: 24px;
+    color: #000;
+}
+
+
+/* Стили для таймлайна */
+
+/* Стили для Q&A и таймлайна */
+.timeline {
+    position: relative;
+    padding: 30px 0;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+}
+
+.timeline-item h3 {
+    font-size: 1.5em;
+}
+
+.timeline-item p {
+    font-size: 1em;
+}
+
+/* Линия таймлайна */
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background: #ddd;
+    z-index: 1;
+}
+
+/* Псевдо-элементы для "точек" на таймлайне */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #ddd;
+    z-index: 2;
+}
+
+.timeline-step {
+    padding: 20px;
+}
+
+.timeline-line {
+    height: 2px;
+    background-color: #ddd;
+    position: relative;
+    top: 50%; /* Центрирование линии */
+    transform: translateY(-50%);
+}
+
+/* Медиа-запрос для адаптации таймлайна на мобильных устройствах */
+@media (max-width: 767px) {
+    .timeline-line {
+        display: none; /* Скрыть линии между элементами таймлайна на мобильных устройствах */
+    }
+}
+/* Стили для таймлайна */
+.timeline-step {
+    padding: 20px;
+}
+
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Размер круга */
+    height: 50px; /* Размер круга */
+    border-radius: 50%; /* Скругление краев для круга */
+    background-color: #ddd; /* Цвет фона круга */
+    color: #fff; /* Цвет иконки */
+    font-size: 24px; /* Размер иконки */
+    margin-bottom: 15px;
+}
+
+.square-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; /* Высота будет определяться классом .h-100, если вы хотите квадратное изображение */
+}
+
+/* Добавьте класс .h-100 для родительского .row, если вы хотите, чтобы фотография была квадратной */
+.h-100 {
+  height: 100%;
+}
+
+.qa-item .fas {
+    font-size: 2rem;
+    color: #6c757d!important;
+}
+
+@media (min-width: 992px) { /* Это для больших экранов, где фотография и текст будут в одной строке */
+  .square-img {
+    height: calc(100vw / 3); /* Это предполагает, что фотография занимает 1/3 ширины всего экрана в больших устройствах */
+  }
+  .h-50 {
+    height: 50%; /* Половина высоты родительского элемента */
+  }
+}
+
+/* Медиа-запрос для адаптации таймлайна на мобильных устройствах */
+@media (max-width: 767px) {
+    .timeline-step {
+        text-align: center;
+        padding: 10px 0; /* Меньше паддинга для мобильных устройств */
+    }
+    .icon-circle {
+        width: 40px; /* Меньший размер круга для мобильных устройств */
+        height: 40px; /* Меньший размер круга для мобильных устройств */
+        font-size: 20px; /* Меньший размер иконки для мобильных устройств */
+    }
+}
+
+
+
+
+/* Выравнивание текста по центру на мобильных устройствах */
+@media (max-width: 767px) {
+    .qa-item.left-item,
+    .qa-item.right-item {
+        text-align: center; /* Центрирование текста на мобильных устройствах */
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar-brand {
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.8); /* Более темный фон для мобильных устройств */
+    }
+
+    .parallax {
+        background-attachment: scroll; /* Убираем фиксированный фон для мобильных устройств */
+    }
+}
+
+@media (max-width: 767px) {
+    .qa::after {
+        display: none;
+    }
+
+    .qa-item::before {
+        display: none;
+    }
+
+    /* Убрать абсолютное позиционирование для элементов таймлайна, чтобы текст не залезал на линию */
+    .qa-item {
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .info {
+        padding-right: 0px!important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #q-and-a {
+            margin-top: 5rem!important;
+    }
+    .timeline-line {
+        display: none; /* Скрыть горизонтальные линии */
+    }
+
+    .timeline-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -50px; /* Или другое значение, чтобы подстроить под ваш дизайн */
+        width: 2px;
+        height: 60px; /* Или другое значение, в зависимости от расстояния между элементами */
+        background-color: #ddd;
+        display: block;
+    }
+
+    .timeline-step {
+        margin-bottom: 60px; /* Добавить пространство для вертикальной линии */
+    }
+}
+
+
+
+
+/*
+
+
+
+*/
+
+canvas {
+  width: 400px;
+  height: 90px;
+  display: block;
+  position: relative;
+  background: transparent;
+  margin: 20px auto;
+}
