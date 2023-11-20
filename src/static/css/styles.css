@@ -74,6 +74,10 @@ li {
   transition: 0s;
 }
 
+#survey-container {
+    height: 1100px!important;
+}
+
 .parallax {
     background-image: url("../../img/banner.jpeg");
     height: 800px; /* Высота баннера */
@@ -472,6 +476,10 @@ p.wedding-date {
 
     .timeline-step {
         margin-bottom: 60px; /* Добавить пространство для вертикальной линии */
+    }
+
+    #survey-container {
+        height: 1300px!important;
     }
 }
 
